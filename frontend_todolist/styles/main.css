@@ -83,8 +83,9 @@ body {
   padding: 10px 20px;
   border-radius: 1rem;
   color: #21324A;
-  border: 2px solid #203A4C;
-  background: white;
+  border: 2px solid transparent; /*borda base*/
+  background: linear-gradient(#fff, #fff) padding-box, /*fundo branco*/
+              linear-gradient(45deg, #203A4C, #1E90FF) border-box; /*gradiente na  com DodgerBlue*/
   cursor: pointer;
   font-size: 1.3rem;
   font-family: inherit;
@@ -93,15 +94,16 @@ body {
 
 .button:hover,
 .button:focus {
-  background: #FFF;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(45deg, #203A4C, #1E90FF) border-box;
   transition: 0.20s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra mais destacada */
 }
 
 .button:active{
-  background: #f8fafc; /* cor enquanto pressionado */
+  background: #E9F2FF; /* cor enquanto pressionado */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* sombra mais baixa */
-  transform: translateY(2px); /* efeito de pressionar */
+  transform: translateY(2px); /* efeito ao pressionar */
 }
 
 .tasks {
@@ -112,7 +114,9 @@ body {
   padding: 0.5rem;
   margin: 0.5rem;
   border-radius: 1rem;
-  border: 1px solid #203A4C;
+  border: 1px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(45deg, #203A4C, #1E90FF) border-box;
   box-sizing: border-box;
   overflow: auto;
   z-index: auto /*faz com que o z-index seja o mesmo do background*/;
