@@ -6,3 +6,4 @@ psycopg[binary, pool]
 pydantic
 alembic
 python-dotenv
+gunicorn
