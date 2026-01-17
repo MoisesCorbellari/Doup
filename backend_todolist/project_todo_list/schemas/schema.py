@@ -15,6 +15,6 @@ class ToDoListResponse(BaseModel):
         )
 
 class ToDoListRequest(BaseModel):
-    title: str = Field(min_length=1, max_length=30)
+    title: str = Field(min_length=1, max_length=50)
     description: Optional[str] = Field(None, max_length=255)
     completed: bool = Field(default=False)

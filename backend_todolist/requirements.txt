@@ -2,7 +2,7 @@ fastapi[standard]
 uvicorn[standard]
 requests
 sqlalchemy
-psycopg[binary]
+psycopg[binary, pool]
 pydantic
 alembic
 python-dotenv

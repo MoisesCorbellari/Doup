@@ -2,7 +2,7 @@ from sqlalchemy import Column, Date, Integer, String, Boolean, Text
 from shared.database import Base
 from datetime import date
 
-class Task(Base):
+class DoUp(Base):
     __tablename__ = "DoUp"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
