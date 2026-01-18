@@ -42,7 +42,7 @@ def create_task(task_request: DoUpRequest,
     return task 
 
 #endpoint para atualizar tarefas
-@router.put("/update/{id_task}", response_model=DoUpResponse, status_code=200)
+@router.put("/update-by-id/{id_task}", response_model=DoUpResponse, status_code=200)
 def update_task_by_id(id_task: int,
                             task_request: DoUpRequest,
                             db: Session = Depends(get_db)) -> DoUpResponse:
@@ -58,7 +58,7 @@ def update_task_by_id(id_task: int,
     return task
 
 #endpoint para finalizar tarefas
-@router.post("/finish/{id_task}", response_model=DoUpResponse, status_code=200)
+@router.post("/finish-by-id/{id_task}", response_model=DoUpResponse, status_code=200)
 def finish_task_by_id(id_task: int, db: Session = Depends(get_db)) -> DoUpResponse:
     task = find_task_by_id(id_task, db)
 
@@ -73,7 +73,7 @@ def finish_task_by_id(id_task: int, db: Session = Depends(get_db)) -> DoUpRespon
     return task
 
 #endpoint para apagar tarefas
-@router.delete("/delete/{id_task}", status_code=204)
+@router.delete("/delete-by-id/{id_task}", status_code=204)
 def delete_task_by_id(id_task: int,
                      db: Session = Depends(get_db)) -> None:
     task = find_task_by_id(id_task, db)
