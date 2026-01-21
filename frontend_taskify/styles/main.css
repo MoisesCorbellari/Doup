@@ -9,16 +9,11 @@ body {
   padding: 20px;
 }
 
-.header {
-  color: #fff;
-  border-radius: 3rem;
-  text-align: center;
-}
-
 .name {
   font-size: 2rem;
   margin: 0px;
-  color: #1E90FF;
+  color: #0AAEFF;
+  text-align: center;
 }
 
 .container {
@@ -52,7 +47,7 @@ body {
   border-radius: 1rem;
   border: 2px solid transparent; /*borda base*/
   background: linear-gradient(#fff, #fff) padding-box, /* fundo branco */
-              linear-gradient(45deg, #203A4C, #1E90FF) border-box; /*gradiente na borda com DodgerBlue*/
+              linear-gradient(45deg, #203A4C, #6ECFFF) border-box; /*gradiente na borda com DodgerBlue*/
   box-sizing: border-box;
   font-size: 1.2rem;
   font-family: inherit;
@@ -67,14 +62,22 @@ body {
   border-radius: 1rem;
   border: 2px solid transparent; /*borda base*/
   background: linear-gradient(#fff, #fff) padding-box, /*fundo branco*/
-              linear-gradient(45deg, #203A4C, #1E90FF) border-box; /*gradiente na  com DodgerBlue*/
-  width: 40rem;
+              linear-gradient(45deg, #203A4C, #6ECFFF) border-box; /*gradiente na  com DodgerBlue*/
+  width: min(40rem, 90vw);
   box-sizing: border-box;
   resize: vertical;
   min-height: 5rem;
   font-size: 1.2rem;
   font-family: inherit;
   text-align: center;
+}
+
+.taskTitle:focus,
+.taskDescription:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.25);
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(45deg, #203A4C, #00BFFF) border-box;
 }
 
 .button {
@@ -85,7 +88,7 @@ body {
   color: #21324A;
   border: 2px solid transparent; /*borda base*/
   background: linear-gradient(#fff, #fff) padding-box, /*fundo branco*/
-              linear-gradient(45deg, #203A4C, #1E90FF) border-box; /*gradiente na  com DodgerBlue*/
+              linear-gradient(45deg, #203A4C, #6ECFFF) border-box; /*gradiente na  com DodgerBlue*/
   cursor: pointer;
   font-size: 1.3rem;
   font-family: inherit;
@@ -95,8 +98,7 @@ body {
 .button:hover,
 .button:focus {
   background: linear-gradient(#fff, #fff) padding-box,
-              linear-gradient(45deg, #203A4C, #1E90FF) border-box;
-  transition: 0.20s;
+              linear-gradient(45deg, #203A4C, #00BFFF) border-box;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra mais destacada */
 }
 
@@ -116,15 +118,14 @@ body {
   border-radius: 1rem;
   border: 1px solid transparent;
   background: linear-gradient(#fff, #fff) padding-box,
-              linear-gradient(45deg, #203A4C, #1E90FF) border-box;
+              linear-gradient(45deg, #203A4C, #6ECFFF) border-box;
   box-sizing: border-box;
   overflow: auto;
-  z-index: auto /*faz com que o z-index seja o mesmo do background*/;
+  z-index: auto; /*faz com que o z-index seja o mesmo do background*/
   background-color: #fff;
   cursor: pointer;
   font-size: 1.2rem;
   font-family: inherit;
-  transition: 0.5s;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* leve sombra */
 }
@@ -132,14 +133,15 @@ body {
 .tasks:hover,
 .tasks:focus {
   transform: translateY(-2px); /* eleva levemente o elemento */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* sombra mais destacada */
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.25), 0 4px 8px rgba(0,0,0,0.3);
   outline: none; /* remove contorno padrão do navegador */
 }
 
 .taskgroup {
   display: flex;
   flex-direction: row;
-  gap: 9rem;
+  /*gap: clamp(1rem, 4vw, 3rem);*/
+  gap: 4rem;
   margin: 0.5rem;
   border-radius: 1rem;
   box-sizing: border-box;
